@@ -9,3 +9,6 @@ C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcore
 C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.AssemblyInfoInputs.cache
 C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.AssemblyInfo.cs
 C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.RazorTargetAssemblyInfo.cache
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.pdb
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.dll
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.pdb
