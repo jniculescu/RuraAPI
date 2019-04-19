@@ -23,7 +23,7 @@ namespace RuralAPI.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<Question> Get()
+        public ActionResult<Question> GetAll()
         {
             var questions = _questionsRepository.GetAllQuestions();
             return new JsonResult(questions);
