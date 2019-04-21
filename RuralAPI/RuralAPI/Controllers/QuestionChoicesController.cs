@@ -35,11 +35,6 @@ namespace RuralAPI.Controllers
         {
             var questionChoice = _questionChoicesService.Get(id);
 
-            if (questionChoice == null)
-            {
-                return NotFound();
-            }
-
             return questionChoice;
         }
     }  

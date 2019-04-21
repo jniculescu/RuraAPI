@@ -1,0 +1,14 @@
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Release\netcoreapp2.2\RuralAPI.deps.json
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Release\netcoreapp2.2\RuralAPI.runtimeconfig.json
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Release\netcoreapp2.2\RuralAPI.runtimeconfig.dev.json
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Release\netcoreapp2.2\RuralAPI.dll
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Release\netcoreapp2.2\RuralAPI.pdb
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.csprojAssemblyReference.cache
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.csproj.CoreCompileInputs.cache
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.RazorAssemblyInfo.cache
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.RazorAssemblyInfo.cs
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.AssemblyInfoInputs.cache
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.AssemblyInfo.cs
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.RazorTargetAssemblyInfo.cache
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.dll
+C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Release\netcoreapp2.2\RuralAPI.pdb

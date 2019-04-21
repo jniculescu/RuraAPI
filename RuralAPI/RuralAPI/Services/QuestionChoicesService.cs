@@ -7,7 +7,7 @@ using RuralAPI.Repositories;
 
 namespace RuralAPI.Services
 {
-    public class QuestionChoicesService : IQuestionChoicesRepository
+    public class QuestionChoicesService : IQuestionChoicesService
     {
         private readonly IQuestionChoicesRepository _questionChoicesRepository;
 

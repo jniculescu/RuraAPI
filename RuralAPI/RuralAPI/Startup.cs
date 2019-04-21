@@ -29,15 +29,20 @@ namespace RuralAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IQuestionsRepository, QuestionsRepository>();
-            services.AddScoped<IQuestionChoicesRepository, QuestionChoicesRepository>();
-
-            services.AddScoped<IQuestionChoicesService, QuestionChoicesService>();
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
             services.AddDbContext<Ruraldb2Context>(opt => {
                 opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext"));
+
+                services.AddScoped<IQuestionsRepository, QuestionsRepository>();
+            services.AddScoped<IQuestionChoicesRepository, QuestionChoicesRepository>();
+            services.AddScoped<ISummariesRepository, SummariesRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
+
+            services.AddScoped<IQuestionsService, QuestionsService>();
+            services.AddScoped<IQuestionChoicesService, QuestionChoicesService>();
+            services.AddScoped<ISummariesService, SummariesService>();
+            services.AddScoped<IPersonService, PersonService>();
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             });
         }
 

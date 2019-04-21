@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RuralAPI.Repositories;
+using RuralAPI.Services;
 using RuralAPI.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -14,18 +14,18 @@ namespace RuralAPI.Controllers
     [ApiController]
     public class QuestionsController : Controller
     {
-        private IQuestionsRepository _questionsRepository;
+        private IQuestionsService _questionsService;
 
-        public QuestionsController(IQuestionsRepository questionsRepository)
+        public QuestionsController(IQuestionsService questionsService)
         {
-            _questionsRepository = questionsRepository;
+            _questionsService = questionsService;
         }
 
         // GET api/Questions
         [HttpGet]
         public ActionResult<Question> GetAll()
         {
-            var questions = _questionsRepository.GetAll();
+            var questions = _questionsService.GetAll();
             return new JsonResult(questions);
         }
 
@@ -33,7 +33,7 @@ namespace RuralAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Question> Get(long id)
         {
-            var question = _questionsRepository.Get(id);
+            var question = _questionsService.Get(id);
             return question;
         }
     }
