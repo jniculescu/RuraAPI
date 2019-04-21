@@ -29,10 +29,7 @@ namespace RuralAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Ruraldb2Context>(opt => {
-                opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext"));
-
-                services.AddScoped<IQuestionsRepository, QuestionsRepository>();
+            services.AddScoped<IQuestionsRepository, QuestionsRepository>();
             services.AddScoped<IQuestionChoicesRepository, QuestionChoicesRepository>();
             services.AddScoped<ISummariesRepository, SummariesRepository>();
             services.AddScoped<IPersonRepository, PersonRepository>();
@@ -42,8 +39,9 @@ namespace RuralAPI
             services.AddScoped<ISummariesService, SummariesService>();
             services.AddScoped<IPersonService, PersonService>();
 
+            services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext")));
+            services.AddMvc().AddJsonOptions(json => json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
