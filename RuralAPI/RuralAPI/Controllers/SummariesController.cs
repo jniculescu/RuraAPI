@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RuralAPI.Models;
+using RuralAPI.Services;
 
 namespace RuralAPI.Controllers
 {
@@ -13,93 +14,45 @@ namespace RuralAPI.Controllers
     [ApiController]
     public class SummariesController : ControllerBase
     {
-        private readonly Ruraldb2Context _context;
+        private readonly ISummariesService _summariesService;
 
-        public SummariesController(Ruraldb2Context context)
+        public SummariesController(ISummariesService summariesService)
         {
-            _context = context;
+            _summariesService = summariesService;
         }
 
         // GET: api/Summaries
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Summary>>> GetSummary()
+        public ActionResult<Summary> GetAll()
         {
-            return await _context.Summary.ToListAsync();
+            var summaries = _summariesService.GetAll().ToList();
+            return new JsonResult(summaries);
         }
 
         // GET: api/Summaries/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Summary>> GetSummary(long id)
+        public ActionResult<Summary> Get(long id)
         {
-            var summary = await _context.Summary.FindAsync(id);
-
-            if (summary == null)
-            {
-                return NotFound();
-            }
+            var summary = _summariesService.Get(id);
 
             return summary;
-        }
-
-        // PUT: api/Summaries/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutSummary(long id, Summary summary)
-        {
-            if (id != summary.SummaryId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(summary).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SummaryExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
         }
 
         // POST: api/Summaries
         [HttpPost]
-        public async Task<ActionResult<Summary>> PostSummary(Summary summary)
+        public ActionResult<Summary> Create(Summary summary)
         {
-            _context.Summary.Add(summary);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetSummary", new { id = summary.SummaryId }, summary);
+            var newSummary = _summariesService.Create(summary);
+            return newSummary;
         }
 
-        // DELETE: api/Summaries/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Summary>> DeleteSummary(long id)
+        // PUT: api/Summaries/5
+        [HttpPut("{id}")]
+        public ActionResult<Summary> Update(long id, Summary summary)
         {
-            var summary = await _context.Summary.FindAsync(id);
-            if (summary == null)
-            {
-                return NotFound();
-            }
-
-            _context.Summary.Remove(summary);
-            await _context.SaveChangesAsync();
-
-            return summary;
+            var updatedSummary = _summariesService.Update(id, summary);
+            return updatedSummary;
         }
-
-        private bool SummaryExists(long id)
-        {
-            return _context.Summary.Any(e => e.SummaryId == id);
-        }
+   
     }
 }

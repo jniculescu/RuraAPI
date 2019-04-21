@@ -8,6 +8,7 @@ namespace RuralAPI.Repositories
 {
     public interface IQuestionsRepository
     {
-        List<Question> GetAllQuestions();
+        List<Question> GetAll();
+        Question Get(long id);
     }
 }

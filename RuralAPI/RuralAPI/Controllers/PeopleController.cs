@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RuralAPI.Models;
+using RuralAPI.Services;
 
 namespace RuralAPI.Controllers
 {
@@ -13,25 +14,28 @@ namespace RuralAPI.Controllers
     [ApiController]
     public class PeopleController : ControllerBase
     {
-        private readonly Ruraldb2Context _context;
+        private readonly IPersonService _personService;
 
-        public PeopleController(Ruraldb2Context context)
+        public PeopleController(IPersonService personService)
         {
-            _context = context;
+            _personService = personService;
         }
+
+
 
         // GET: api/People
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Person>>> GetPerson()
+        public ActionResult<Person> GetAll()
         {
-            return await _context.Person.ToListAsync();
+            var persons = _personService.GetAll();
+            return new JsonResult(persons);
         }
 
         // GET: api/People/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> GetPerson(long id)
         {
-            var person = await _context.Person.FindAsync(id);
+            var person = await _personService.Get(id);
 
             if (person == null)
             {
@@ -41,7 +45,7 @@ namespace RuralAPI.Controllers
             return person;
         }
 
-        // PUT: api/People/5
+       /* // PUT: api/People/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPerson(long id, Person person)
         {
@@ -50,11 +54,11 @@ namespace RuralAPI.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(person).State = EntityState.Modified;
+            _personService.Entry(person).State = EntityState.Modified;
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _personService.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -69,37 +73,38 @@ namespace RuralAPI.Controllers
             }
 
             return NoContent();
-        }
+        } */
 
         // POST: api/People
         [HttpPost]
-        public async Task<ActionResult<Person>> PostPerson(Person person)
+        public ActionResult<Person> Create(Person person)
         {
-            _context.Person.Add(person);
-            await _context.SaveChangesAsync();
+            _personService.Create(person);
+            _personService.SaveChanges();
 
-            return CreatedAtAction("GetPerson", new { id = person.PersonId }, person);
+            return person;
         }
 
+        /*
         // DELETE: api/People/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Person>> DeletePerson(long id)
         {
-            var person = await _context.Person.FindAsync(id);
+            var person = await _personService.Person.FindAsync(id);
             if (person == null)
             {
                 return NotFound();
             }
 
-            _context.Person.Remove(person);
-            await _context.SaveChangesAsync();
+            _personService.Person.Remove(person);
+            await _personService.SaveChangesAsync();
 
             return person;
         }
 
         private bool PersonExists(long id)
         {
-            return _context.Person.Any(e => e.PersonId == id);
-        }
+            return _personService.Person.Any(e => e.PersonId == id);
+        } */
     }
 }

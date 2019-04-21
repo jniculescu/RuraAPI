@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using RuralAPI.Models;
 using RuralAPI.Repositories;
+using RuralAPI.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace RuralAPI
@@ -29,10 +30,14 @@ namespace RuralAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IQuestionsRepository, QuestionsRepository>();
+            services.AddScoped<IQuestionChoicesRepository, QuestionChoicesRepository>();
+
+            services.AddScoped<IQuestionChoicesService, QuestionChoicesService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddDbContext<Ruraldb2Context>(opt => {
-                opt.UseSqlServer(Configuration.GetConnectionString("RuralContext"));
+                opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext"));
             });
         }
 

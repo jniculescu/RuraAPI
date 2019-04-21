@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RuralAPI.Models;
+using RuralAPI.Services;
 
 namespace RuralAPI.Controllers
 {
@@ -13,26 +14,26 @@ namespace RuralAPI.Controllers
     [ApiController]
     public class QuestionChoicesController : ControllerBase
     {
-        private readonly Ruraldb2Context _context;
+        private readonly IQuestionChoicesService _questionChoicesService;
 
-        public QuestionChoicesController(Ruraldb2Context context)
+        public QuestionChoicesController(IQuestionChoicesService questionChoicesService)
         {
-            _context = context;
+            _questionChoicesService = questionChoicesService;
         }
 
         // GET: api/QuestionChoices
         [HttpGet]
-        public ActionResult<IEnumerable<QuestionChoice>> GetQuestionChoice()
+        public ActionResult<QuestionChoice> GetAll()
         {
-            var Questionchoices = _context.QuestionChoice.ToList();
+            var Questionchoices = _questionChoicesService.GetAll().ToList();
             return new JsonResult(Questionchoices);
         }
 
         // GET: api/QuestionChoices/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<QuestionChoice>> GetQuestionChoice(long id)
+        public ActionResult<QuestionChoice> Get(long id)
         {
-            var questionChoice = await _context.QuestionChoice.FindAsync(id);
+            var questionChoice = _questionChoicesService.Get(id);
 
             if (questionChoice == null)
             {
@@ -41,66 +42,5 @@ namespace RuralAPI.Controllers
 
             return questionChoice;
         }
-
-        // PUT: api/QuestionChoices/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuestionChoice(long id, QuestionChoice questionChoice)
-        {
-            if (id != questionChoice.QuestionChoiseId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(questionChoice).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!QuestionChoiceExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/QuestionChoices
-        [HttpPost]
-        public async Task<ActionResult<QuestionChoice>> PostQuestionChoice(QuestionChoice questionChoice)
-        {
-            _context.QuestionChoice.Add(questionChoice);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetQuestionChoice", new { id = questionChoice.QuestionChoiseId }, questionChoice);
-        }
-
-        // DELETE: api/QuestionChoices/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<QuestionChoice>> DeleteQuestionChoice(long id)
-        {
-            var questionChoice = await _context.QuestionChoice.FindAsync(id);
-            if (questionChoice == null)
-            {
-                return NotFound();
-            }
-
-            _context.QuestionChoice.Remove(questionChoice);
-            await _context.SaveChangesAsync();
-
-            return questionChoice;
-        }
-
-        private bool QuestionChoiceExists(long id)
-        {
-            return _context.QuestionChoice.Any(e => e.QuestionChoiseId == id);
-        }
-    }
+    }  
 }
