@@ -40,7 +40,7 @@ namespace RuralAPI.Controllers
 
         // POST: api/Summaries
         [HttpPost]
-        public ActionResult<Summary> Create(Summary summary)
+        public ActionResult<Summary> Post(Summary summary)
         {
             var newSummary = _summariesService.Create(summary);
             return newSummary;
@@ -48,7 +48,7 @@ namespace RuralAPI.Controllers
 
         // PUT: api/Summaries/5
         [HttpPut("{id}")]
-        public ActionResult<Summary> Update(long id, Summary summary)
+        public ActionResult<Summary> Put(long id, Summary summary)
         {
             var updatedSummary = _summariesService.Update(id, summary);
             return updatedSummary;

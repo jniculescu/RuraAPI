@@ -39,7 +39,7 @@ namespace RuralAPI.Controllers
 
         // POST: api/People
         [HttpPost]
-        public ActionResult<Person> Create(Person person)
+        public ActionResult<Person> Post(Person person)
         {
             var newPerson = _personService.Create(person);
 
@@ -48,7 +48,7 @@ namespace RuralAPI.Controllers
 
         // PUT: api/People/5
         [HttpPut("{id}")]
-        public ActionResult<Person> Update(long id, Person person)
+        public ActionResult<Person> Put(long id, Person person)
            {
 
                 var updatedPerson = _personService.Update(id, person);
