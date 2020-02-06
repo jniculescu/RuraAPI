@@ -15,10 +15,14 @@ namespace RuralAPI.Models
         [Key]
         public long QuestionChoiseId { get; set; }
         [StringLength(50)]
-        public string LeftTitle { get; set; }
+        public string LeftTitle_FI { get; set; }
         [StringLength(50)]
-        public string RightTitle { get; set; }
+        public string RightTitle_FI { get; set; }
         public long? QuestionId { get; set; }
+        [StringLength(50)]
+        public string LeftTitle_EN { get; set; }
+        [StringLength(50)]
+        public string RightTitle_EN { get; set; }
 
         [ForeignKey("QuestionId")]
         [InverseProperty("QuestionChoice")]

@@ -39,7 +39,17 @@ namespace RuralAPI
             services.AddScoped<ISummariesService, SummariesService>();
             services.AddScoped<IPersonService, PersonService>();
 
-            services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext")));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("RuralPolicy",
+                builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
+            //services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext")));
+            services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Ruralcontext")));
             services.AddMvc().AddJsonOptions(json => json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -57,6 +67,7 @@ namespace RuralAPI
                 app.UseHsts();
             }
 
+            app.UseCors("RuralPolicy");
             app.UseHttpsRedirection();
             app.UseMvc();
         }

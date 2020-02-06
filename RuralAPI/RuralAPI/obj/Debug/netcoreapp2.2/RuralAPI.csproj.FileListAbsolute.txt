@@ -12,3 +12,17 @@ C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcore
 C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.pdb
 C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.dll
 C:\Users\jani\Documents\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.pdb
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.deps.json
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.runtimeconfig.json
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.runtimeconfig.dev.json
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.dll
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\bin\Debug\netcoreapp2.2\RuralAPI.pdb
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.csprojAssemblyReference.cache
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.csproj.CoreCompileInputs.cache
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.RazorAssemblyInfo.cache
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.RazorAssemblyInfo.cs
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.AssemblyInfoInputs.cache
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.AssemblyInfo.cs
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.RazorTargetAssemblyInfo.cache
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.dll
+D:\koulu\RuralProject\RuraAPI\RuralAPI\RuralAPI\obj\Debug\netcoreapp2.2\RuralAPI.pdb

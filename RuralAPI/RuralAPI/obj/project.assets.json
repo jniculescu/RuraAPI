@@ -12953,11 +12953,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jani\\Documents\\RuralProject\\RuraAPI\\RuralAPI\\RuralAPI\\RuralAPI.csproj",
+      "projectUniqueName": "D:\\koulu\\RuralProject\\RuraAPI\\RuralAPI\\RuralAPI\\RuralAPI.csproj",
       "projectName": "RuralAPI",
-      "projectPath": "C:\\Users\\jani\\Documents\\RuralProject\\RuraAPI\\RuralAPI\\RuralAPI\\RuralAPI.csproj",
+      "projectPath": "D:\\koulu\\RuralProject\\RuraAPI\\RuralAPI\\RuralAPI\\RuralAPI.csproj",
       "packagesPath": "C:\\Users\\jani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jani\\Documents\\RuralProject\\RuraAPI\\RuralAPI\\RuralAPI\\obj\\",
+      "outputPath": "D:\\koulu\\RuralProject\\RuraAPI\\RuralAPI\\RuralAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

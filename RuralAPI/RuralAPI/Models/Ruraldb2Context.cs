@@ -49,9 +49,13 @@ namespace RuralAPI.Models
 
             modelBuilder.Entity<QuestionChoice>(entity =>
             {
-                entity.Property(e => e.LeftTitle).IsUnicode(false);
+                entity.Property(e => e.LeftTitle_FI).IsUnicode(false);
 
-                entity.Property(e => e.RightTitle).IsUnicode(false);
+                entity.Property(e => e.RightTitle_FI).IsUnicode(false);
+
+                entity.Property(e => e.LeftTitle_EN).IsUnicode(false);
+
+                entity.Property(e => e.RightTitle_EN).IsUnicode(false);
 
                 entity.HasOne(d => d.Question)
                     .WithMany(p => p.QuestionChoice)
