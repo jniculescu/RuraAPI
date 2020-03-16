@@ -48,8 +48,8 @@ namespace RuralAPI
                 });
             });
 
-            //services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext")));
-            services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Ruralcontext")));
+            services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("AzureRuralDbContext")));
+            //services.AddDbContext<Ruraldb2Context>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Ruralcontext")));
             services.AddMvc().AddJsonOptions(json => json.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
